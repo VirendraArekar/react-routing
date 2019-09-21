@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route,Link} from 'react-router-dom';
+import BlogInfo from './BlogInfo';
 
 export default function Blog() {
     return (
         <div>
+          <Router>
           <div className="container">
             <div className="row">
 
@@ -15,9 +18,9 @@ export default function Blog() {
                 <div className="card mb-4">
                     <img className="card-img-top" src="http://placehold.it/750x300" alt="pic123"/>
                     <div className="card-body">
-                    <h2 className="card-title">Post Title</h2>
+                    <h2 className="card-title">First Post</h2>
                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a href="/more" className="btn btn-primary">Read More &rarr;</a>
+                  <Link to="/blogs/First Post" className="btn btn-primary">Read More &rarr;</Link>
                     </div>
                     <div className="card-footer text-muted">
                     Posted on January 1, 2017 by
@@ -29,9 +32,9 @@ export default function Blog() {
                 <div className="card mb-4">
                     <img className="card-img-top" src="http://placehold.it/750x300" alt="pic123"/>
                     <div className="card-body">
-                    <h2 className="card-title">Post Title</h2>
+                    <h2 className="card-title">Second Post</h2>
                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a href="/more" className="btn btn-primary">Read More &rarr;</a>
+                  <Link to="/blogs/Second Post" className="btn btn-primary">Read More &rarr;</Link>
                     </div>
                     <div className="card-footer text-muted">
                     Posted on January 1, 2017 by
@@ -42,9 +45,9 @@ export default function Blog() {
                 <div className="card mb-4">
                     <img className="card-img-top" src="http://placehold.it/750x300" alt="pic123"/>
                     <div className="card-body">
-                    <h2 className="card-title">Post Title</h2>
+                    <h2 className="card-title">Third Post</h2>
                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a href="/more" className="btn btn-primary">Read More &rarr;</a>
+                  <Link to="/blogs/Third Post" className="btn btn-primary">Read More &rarr;</Link>
                     </div>
                     <div className="card-footer text-muted">
                     Posted on January 1, 2017 by
@@ -64,6 +67,11 @@ export default function Blog() {
                 </div>
 
                 <div className="col-md-4">
+
+                <div className="card my-4">
+                    <Route path="/blogs/:title" component={BlogInfo}/>
+
+                </div>
 
                 <div className="card my-4">
                     <h5 className="card-header">Search</h5>
@@ -107,6 +115,7 @@ export default function Blog() {
                             </li>
                         </ul>
                         </div>
+
                     </div>
                     </div>
                 </div>
@@ -121,6 +130,8 @@ export default function Blog() {
               </div>
             </div>
             </div>
+
+          </Router>
         </div>
     )
 }
